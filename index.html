@@ -118,16 +118,37 @@
         .whatsapp { background: var(--accent); }
 
         /* --- 9. DESKTOP ADAPTATION --- */
-        @media (min-width: 768px) {
-            h1 { font-size: 45px; }
-            .hero-flex { flex-direction: row; text-align: left; gap: 50px; }
-            .service-flex { flex-direction: row; }
-            .service-flex.reverse { flex-direction: row-reverse; }
-            .service-img, .service-text { flex: 1; }
-            .service-text { text-align: left; padding: 50px; }
-            .location-grid { grid-template-columns: 1fr 2fr; }
-            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
-        }
+       /* --- MOBILE-FIRST STYLES (Default for Phone) --- */
+.service-flex { 
+    display: flex; 
+    flex-direction: column-reverse; /* Image (placed first in HTML) stays on top */
+    text-align: center;
+}
+
+.service-img img { 
+    width: 100%; 
+    height: 250px; 
+    object-fit: cover; 
+}
+
+/* --- 🖥️ DESKTOP ADJUSTMENTS (Screens wider than 768px) --- */
+@media (min-width: 768px) {
+    h1 { font-size: 45px; }
+    
+    .hero-flex { flex-direction: row; text-align: left; gap: 50px; }
+    
+    /* On Desktop, we switch to row, putting Text on Left and Image on Right */
+    .service-flex { 
+        flex-direction: row-reverse; /* Text Left, Image Right */
+        text-align: left;
+    }
+
+    .service-img, .service-text { flex: 1; }
+    .service-text { padding: 50px; }
+    
+    .location-grid { grid-template-columns: 1fr 2fr; }
+    .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+}
     </style>
 </head>
 <body>
@@ -281,7 +302,7 @@
 
                 <div class="card" style="padding: 0; overflow: hidden; border: none; box-shadow: var(--shadow);">
                     <iframe 
-                        src="http://googleusercontent.com/maps.google.com/8" 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4720.804674285561!2d72.840762!3d18.9882417!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7cf86a358e587%3A0x389b90528fc9814c!2sACE%20Healthcare%20And%20Orthodontic%20Center!5e1!3m2!1sen!2sin!4v1774888063231!5m2!1sen!2sin" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" 
                         width="100%" 
                         height="100%" 
                         style="border:0; min-height: 400px; display: block;" 

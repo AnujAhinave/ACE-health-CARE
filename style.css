@@ -1,58 +1,122 @@
-:root {
-    --primary: #2ecc71; /* Green Accent from your screenshot */
-    --navy: #0b132b;    /* Dark background */
-    --light-navy: #1c2541;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ACE Healthcare & Orthodontic Center | Parel East</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-/* --- SMILE GALLERY --- */
-.gallery-scroll {
-    display: flex;
-    overflow-x: auto;
-    gap: 15px;
-    padding: 20px 0;
-}
-.gallery-item {
-    min-width: 280px;
-    background: white;
-    border-radius: 15px;
-    overflow: hidden;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-}
-.gallery-item img { width: 100%; height: 200px; object-fit: cover; }
-.gallery-item span { display: block; padding: 10px; text-align: center; font-weight: bold; }
+    <nav class="nav-container sticky-nav">
+        <div class="nav-scroll-wrapper container">
+            <a href="index.html" class="nav-link active">Home</a>
+            <a href="treatments.html" class="nav-link">Treatments</a>
+            <a href="doctors.html" class="nav-link">Doctors</a>
+            <a href="reviews.html" class="nav-link">Reviews</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+    </nav>
 
-/* --- DARK BOOKING FORM --- */
-.booking-section { background: var(--navy); padding: 80px 0; color: white; }
-.booking-form-card { max-width: 700px; margin: 0 auto; text-align: center; }
-.booking-form-card h2 span { color: var(--primary); }
-.form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; margin-top: 30px; }
-input, select, textarea {
-    width: 100%;
-    background: var(--light-navy);
-    border: 1px solid #3a506b;
-    padding: 15px;
-    color: white;
-    border-radius: 5px;
-}
-textarea { height: 100px; margin-top: 15px; }
-.btn-submit {
-    width: 100%;
-    background: var(--primary);
-    color: white;
-    padding: 18px;
-    border: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 20px;
-    cursor: pointer;
-}
+    <header class="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <span class="trust-badge">⭐ 5.0 (50+ Google Reviews)</span>
+                <h1>ACE Healthcare & Orthodontic Center</h1>
+                <p class="hero-subtitle">Family-run multi-speciality care with 40+ years of expertise. Best-in-class Dental, Child, and Women's health in Kalachowki.</p>
+                <div class="hero-cta">
+                    <a href="tel:9004023042" class="btn btn-primary">Book Appointment</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Abhishake.jpg" alt="Dr. Abhishek Rathod">
+            </div>
+        </div>
+    </header>
 
-/* --- FOOTER DARK --- */
-.footer-dark { background: #000; color: #888; padding: 60px 0 20px; font-size: 14px; }
-.footer-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
-.footer-col h3, .footer-col h4 { color: white; margin-bottom: 20px; }
-.status { color: var(--primary); font-weight: bold; }
-.footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid #222; }
+    <section class="section">
+        <div class="container">
+            <h2 class="section-title">Our Specialist Panel</h2>
+            <div class="doctor-grid">
+                <div class="doctor-card">
+                    <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Ashok.jpg" alt="Dr. Ashok"></div>
+                    <div class="dr-info">
+                        <h3>Dr. Ashok Rathod</h3>
+                        <p class="dr-title">Child & Heart Specialist</p>
+                        <span class="exp-tag">40+ Years Experience</span>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Bharati.jpg" alt="Dr. Bharati"></div>
+                    <div class="dr-info">
+                        <h3>Dr. Bharati Rathod</h3>
+                        <p class="dr-title">Women Specialist (OBGYN)</p>
+                        <span class="exp-tag">30+ Years Experience</span>
+                    </div>
+                </div>
+                <div class="doctor-card">
+                    <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Abhishake.jpg" alt="Dr. Abhishek"></div>
+                    <div class="dr-info">
+                        <h3>Dr. Abhishek Rathod</h3>
+                        <p class="dr-title">Braces & Jaw Specialist</p>
+                        <span class="exp-tag">MDS Orthodontics</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-/* RE-APPLY BHARATI IMAGE FIX */
-.dr-bharati-img { object-position: center 20%; }
+    <section class="section bg-light">
+        <div class="container">
+            <h2 class="section-title">Find Us</h2>
+            <div class="location-grid">
+                <div class="location-info card">
+                    <h3>Contact Details</h3>
+                    <p><strong>📍 Address:</strong><br>D 1-2, Ishwati prasad CHS, D.L. road, Next to Ganesh Banquet Hall, Kalachowki, Mumbai 33</p>
+                    <p><strong>📞 Phone:</strong><br>9004023042 / 8591387772</p>
+                    <p><strong>⏰ Hours:</strong><br>10 AM - 1 PM | 5 PM - 8 PM</p>
+                </div>
+                <div class="map-container card">
+                    <iframe src="http://googleusercontent.com/maps.google.com/4" width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="main-footer">
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>ACE Healthcare</h3>
+                <p>Providing trusted medical and dental care for generations in Parel East.</p>
+            </div>
+            <div class="footer-links">
+                <h4>Explore</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="treatments.html">Treatments</a></li>
+                    <li><a href="doctors.html">Doctors</a></li>
+                </ul>
+            </div>
+            <div class="footer-services">
+                <h4>Specialities</h4>
+                <ul>
+                    <li>Dental Care</li>
+                    <li>Child Specialist</li>
+                    <li>Women Health</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 ACE Healthcare Center. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <div class="bottom-bar">
+        <a href="tel:9004023042" class="bar-btn call">📞 Call 9004023042</a>
+        <a href="https://wa.me/919004023042" class="bar-btn whatsapp">💬 WhatsApp</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Stories | ACE Healthcare - Real Transformations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+        html { scroll-behavior: smooth; font-family: 'Plus Jakarta Sans', sans-serif; }
+        
+        .text-premium { color: #0056b3; } 
+        .bg-premium { background-color: #0056b3; }
+        
+        .review-card { 
+            background: white; 
+            border-radius: 2rem; 
+            overflow: hidden; 
+            border: 1px solid #f1f5f9;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            display: flex;
+            flex-direction: column;
+        }
+        .review-card:hover { 
+            transform: translateY(-10px); 
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.08);
+            border-color: #e2e8f0;
+        }
+        .review-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .category-tag {
+            font-size: 9px;
+            font-weight: 800;
+            text-transform: uppercase;
+            tracking: 0.1em;
+            padding: 4px 12px;
+            border-radius: 20px;
+        }
+
+        .nav-scroll::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-[#FBFCFE] text-slate-900 antialiased">
+
+<nav class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-premium rounded-lg flex items-center justify-center text-white shadow-lg">
+                <i class="fas fa-quote-left"></i>
+            </div>
+            <div class="leading-tight">
+                <span class="font-extrabold text-xl tracking-tighter uppercase block">ACE <span class="text-premium">HEALTHCARE</span></span>
+                <span class="text-[9px] font-bold text-slate-400 tracking-widest uppercase">Patient Stories</span>
+            </div>
+        </div>
+        <div class="nav-scroll flex overflow-x-auto items-center gap-6 text-xs font-bold uppercase tracking-widest text-slate-600 ml-4 lg:ml-0">
+            <a href="index.html" class="hover:text-premium transition whitespace-nowrap">Home</a>
+            <a href="Orthodontics.html" class="hover:text-premium transition whitespace-nowrap">Braces</a>
+            <a href="Paediatrics.html" class="hover:text-premium transition whitespace-nowrap">Child Care</a>
+            <a href="WomenSpecialist.html" class="hover:text-premium transition whitespace-nowrap">Women's Care</a>
+        </div>
+    </div>
+</nav>
+
+<section class="pt-20 pb-10 text-center">
+    <div class="max-w-3xl mx-auto px-6">
+        <h1 class="text-4xl md:text-6xl font-extrabold text-slate-900 tracking-tight mb-6">Patient <span class="italic font-light text-slate-400">Stories</span></h1>
+        <p class="text-slate-500 font-medium leading-relaxed">Real transformations and honest feedback from our valued patients in Kalachowki and Parel East.</p>
+    </div>
+</section>
+
+<section class="pb-24 px-6">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <div class="review-card shadow-sm">
+            <img src="https://www.shutterstock.com/image-photo/smiling-man-dental-braces-on-600nw-2567450173.jpg" alt="Patient 1">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Life-changing Smile</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Dr. Abhishek corrected my deep bite in just 14 months. I never thought my smile could look this natural. Highly skilled hands!"</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Sneha P.</span><span class="category-tag bg-blue-100 text-blue-600">Orthodontics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2fJVnJj-ln1PN4Nylw8q_N3seA0KS5NJYcA&s" alt="Patient 2">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Invisible & Comfort</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Opted for Clear Aligners. The 3D scan was so accurate, and the trays were barely visible. Perfect for working professionals."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Rohan M.</span><span class="category-tag bg-blue-100 text-blue-600">Orthodontics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=400" alt="Patient 3">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Painless Extractions</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Was terrified of wisdom tooth surgery, but Dr. Abhishek made it painless. The recovery was surprisingly fast with no swelling."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Anjali D.</span><span class="category-tag bg-blue-100 text-blue-600">Orthodontics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=400" alt="Patient 4">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Best in Mumbai</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Coming from Navi Mumbai just for his expertise. The precision in his work is truly Gold Medalist level."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Sameer K.</span><span class="category-tag bg-blue-100 text-blue-600">Orthodontics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1581594693702-fbdc51b2763b?q=80&w=400" alt="Patient 5">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">40 Years of Trust</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Dr. Ashok Rathod is a legend. He treated me as a child, and now he treats my daughter. His diagnosis is always 100% accurate."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Priya S.</span><span class="category-tag bg-teal-100 text-teal-600">Paediatrics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://invc.co.in/uploads/2022/07/69829dd91db105b76393272088b3d3d5.jpg" alt="Patient 6">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Gentle Vaccination</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"My toddler didn't even cry during the shots! The clinic environment is so child-friendly and clean."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Pooja R.</span><span class="category-tag bg-teal-100 text-teal-600">Paediatrics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://thumbs.dreamstime.com/b/pediatrician-wearing-white-lab-coat-face-mask-holding-newborn-baby-using-stethoscope-to-check-health-chest-pediatric-412009023.jpg" alt="Patient 7">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Neonatal Expert</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"He handled our premature baby with so much care. His experience as HOD at J.J. Hospital really shows in his confidence."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Amit V.</span><span class="category-tag bg-teal-100 text-teal-600">Paediatrics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1502781252888-9143ba7f074e?q=80&w=400" alt="Patient 8">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">No Over-medication</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"I love that he doesn't prescribe unnecessary antibiotics. He believes in natural growth and evidence-based care."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Shweta G.</span><span class="category-tag bg-teal-100 text-teal-600">Paediatrics</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=400" alt="Patient 9">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Pregnancy Support</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Dr. Bharati guided me through my first pregnancy with such motherly care. Every scan and report was explained so patiently."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Neha T.</span><span class="category-tag bg-rose-100 text-rose-600">Women's Care</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=400" alt="Patient 10">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">PCOS Recovery</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Was struggling with PCOS for years. Her lifestyle changes and treatment plan finally worked. Truly grateful."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Kavita L.</span><span class="category-tag bg-rose-100 text-rose-600">Women's Care</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.pexels.com/photos/7089035/pexels-photo-7089035.jpeg?auto=compress&amp;cs=tinysrgb&amp;h=650&amp;w=940" alt="Patient 11">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Safe & Private</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"The clinic maintain high privacy. As a woman, I felt very comfortable discussing my health issues with Dr. Bharati."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Megha W.</span><span class="category-tag bg-rose-100 text-rose-600">Women's Care</span></div>
+            </div>
+        </div>
+
+        <div class="review-card shadow-sm">
+            <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=400" alt="Patient 12">
+            <div class="p-8">
+                <div class="flex text-yellow-400 text-[10px] mb-4 gap-1"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                <h3 class="font-bold text-lg mb-2">Senior Expertise</h3>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">"Her years of experience at E.S.I.S. Hospital show in her calm handling of my high-risk case. Best Gynaec in Parel East."</p>
+                <div class="flex justify-between items-center"><span class="text-xs font-bold text-slate-400 uppercase tracking-widest">— Rashmi B.</span><span class="category-tag bg-rose-100 text-rose-600">Women's Care</span></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<footer class="bg-slate-900 text-white py-12 text-center rounded-t-[3rem]">
+    <p class="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">© 2026 ACE Healthcare Center | Designed for Excellence</p>
+</footer>
+
+</body>
+</html>

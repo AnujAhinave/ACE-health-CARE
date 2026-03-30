@@ -5,11 +5,134 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>ACE Healthcare & Orthodontic Center | Parel East</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    
+    <style>
+        /* --- 1. CORE DESIGN SYSTEM --- */
+        :root {
+            --primary: #0056b3; 
+            --accent: #25d366; 
+            --dark: #1a202c;
+            --text-dark: #1a1a1a;
+            --text-light: #666;
+            --bg-light: #f8fbff;
+            --white: #ffffff;
+            --shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 70px; /* Space for Bottom Bar */
+        }
+        .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        /* --- 2. NAVIGATION (No-Hamburger) --- */
+        .nav-container {
+            background: var(--white);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #eee;
+        }
+        .nav-scroll-wrapper {
+            display: flex;
+            overflow-x: auto;
+            padding: 12px 0;
+            gap: 10px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .nav-scroll-wrapper::-webkit-scrollbar { display: none; }
+        .nav-link {
+            white-space: nowrap;
+            text-decoration: none;
+            color: var(--text-dark);
+            padding: 8px 18px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            background: #f0f2f5;
+        }
+        .nav-link.active { background: var(--primary); color: white; }
+
+        /* --- 3. HERO SECTION --- */
+        .hero { padding: 40px 0; background: linear-gradient(180deg, #eef6ff 0%, #ffffff 100%); }
+        .hero-flex { display: flex; flex-direction: column; align-items: center; text-align: center; }
+        .trust-badge { background: #fff; padding: 5px 15px; border-radius: 20px; font-weight: bold; color: #f39c12; font-size: 13px; box-shadow: 0 2px 5px rgba(0,0,0,0.05); margin-bottom: 15px; display: inline-block; }
+        h1 { font-size: 30px; line-height: 1.2; margin-bottom: 15px; font-weight: 700; }
+        .hero-subtitle { color: var(--text-light); margin-bottom: 25px; font-size: 16px; }
+        .hero-image img { 
+            width: 100%; 
+            max-width: 320px; 
+            border-radius: 30px; 
+            box-shadow: var(--shadow);
+            margin-top: 20px;
+        }
+
+        /* --- 4. DOCTOR CARDS --- */
+        .section { padding: 60px 0; }
+        .section-title { text-align: center; font-size: 26px; margin-bottom: 10px; font-weight: 700; }
+        .section-subtitle { text-align: center; color: var(--text-light); margin-bottom: 40px; font-size: 14px; }
+        .doctor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .doctor-card { background: #fff; border: 1px solid #eee; border-radius: 20px; overflow: hidden; text-align: center; padding-bottom: 20px; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
+        
+        .dr-img img { 
+            width: 100%; 
+            aspect-ratio: 1/1; 
+            object-fit: cover; 
+            border-bottom: 1px solid #eee; 
+        }
+
+        /* THE BHARATI IMAGE FIX */
+        .dr-bharati-img { object-position: center 15% !important; }
+
+        .dr-info { padding: 20px 15px; }
+        .dr-title { color: var(--primary); font-weight: 700; font-size: 15px; margin-bottom: 5px; }
+        .exp-tag { background: #e8f2ff; color: var(--primary); padding: 4px 12px; border-radius: 12px; font-size: 12px; font-weight: bold; }
+
+        /* --- 5. DETAILED SERVICES --- */
+        .bg-light { background: var(--bg-light); }
+        .service-block { background: white; border-radius: 20px; border: 1px solid #eee; overflow: hidden; margin-bottom: 30px; }
+        .service-flex { display: flex; flex-direction: column; }
+        .service-img img { width: 100%; height: 250px; object-fit: cover; }
+        .service-text { padding: 30px 20px; text-align: center; }
+        .btn-outline { border: 2px solid var(--primary); color: var(--primary); padding: 10px 20px; text-decoration: none; border-radius: 8px; font-weight: bold; display: inline-block; margin-top: 15px; }
+
+        /* --- 6. MAP & LOCATION --- */
+        .location-grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        .card { background: white; padding: 25px; border-radius: 15px; border: 1px solid #eee; }
+
+        /* --- 7. FOOTER --- */
+        .main-footer { background: var(--dark); color: #cbd5e0; padding: 50px 0 20px; }
+        .footer-grid { display: grid; grid-template-columns: 1fr; gap: 30px; border-bottom: 1px solid #2d3748; padding-bottom: 30px; }
+        .footer-brand h3 { color: white; margin-bottom: 15px; }
+        .footer-bottom { text-align: center; padding-top: 20px; font-size: 12px; }
+
+        /* --- 8. BOTTOM BAR --- */
+        .bottom-bar { position: fixed; bottom: 0; left: 0; right: 0; display: flex; height: 65px; z-index: 2000; }
+        .bar-btn { flex: 1; display: flex; align-items: center; justify-content: center; color: white; text-decoration: none; font-weight: bold; font-size: 15px; }
+        .call { background: var(--primary); }
+        .whatsapp { background: var(--accent); }
+
+        /* --- 9. DESKTOP ADAPTATION --- */
+        @media (min-width: 768px) {
+            h1 { font-size: 45px; }
+            .hero-flex { flex-direction: row; text-align: left; gap: 50px; }
+            .service-flex { flex-direction: row; }
+            .service-flex.reverse { flex-direction: row-reverse; }
+            .service-img, .service-text { flex: 1; }
+            .service-text { text-align: left; padding: 50px; }
+            .location-grid { grid-template-columns: 1fr 2fr; }
+            .footer-grid { grid-template-columns: 2fr 1fr 1fr; }
+        }
+    </style>
 </head>
 <body>
 
-    <nav class="nav-container sticky-nav">
+    <nav class="nav-container">
         <div class="nav-scroll-wrapper container">
             <a href="index.html" class="nav-link active">Home</a>
             <a href="treatments.html" class="nav-link">Treatments</a>
@@ -25,10 +148,8 @@
             <div class="hero-text">
                 <span class="trust-badge">⭐ 5.0 (50+ Google Reviews)</span>
                 <h1>ACE Healthcare & Orthodontic Center</h1>
-                <p class="hero-subtitle">Family-run multi-speciality care with 40+ years of expertise. Best-in-class Dental, Child, and Women's health in Kalachowki.</p>
-                <div class="hero-cta">
-                    <a href="tel:9004023042" class="btn btn-primary">Book Appointment</a>
-                </div>
+                <p class="hero-subtitle">World-class Dental, Child, and Women's health specialists under one roof with 40+ years of trust.</p>
+                <a href="tel:9004023042" style="background: var(--primary); color: white; padding: 15px 30px; text-decoration: none; border-radius: 10px; font-weight: bold; display: inline-block;">Book Appointment</a>
             </div>
             <div class="hero-image">
                 <img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/ChatGPT%20Image%20Mar%2030%2C%202026%2C%2008_40_34%20PM.jpg" alt="Dr. Abhishek Rathod">
@@ -39,6 +160,7 @@
     <section class="section">
         <div class="container">
             <h2 class="section-title">Our Specialist Panel</h2>
+            <p class="section-subtitle">Trained at India's Top Government Institutions</p>
             <div class="doctor-grid">
                 <div class="doctor-card">
                     <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Ashok.jpg" alt="Dr. Ashok"></div>
@@ -49,7 +171,7 @@
                     </div>
                 </div>
                 <div class="doctor-card">
-                    <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Bharati.jpg" alt="Dr. Bharati"></div>
+                    <div class="dr-img"><img src="https://raw.githubusercontent.com/AnujAhinave/ACE-health-CARE/main/Bharati.jpg" alt="Dr. Bharati" class="dr-bharati-img"></div>
                     <div class="dr-info">
                         <h3>Dr. Bharati Rathod</h3>
                         <p class="dr-title">Women Specialist (OBGYN)</p>
@@ -68,54 +190,150 @@
         </div>
     </section>
 
-    <section class="section bg-light">
+<section class="section bg-light">
         <div class="container">
-            <h2 class="section-title">Find Us</h2>
-            <div class="location-grid">
-                <div class="location-info card">
-                    <h3>Contact Details</h3>
-                    <p><strong>📍 Address:</strong><br>D 1-2, Ishwati prasad CHS, D.L. road, Next to Ganesh Banquet Hall, Kalachowki, Mumbai 33</p>
-                    <p><strong>📞 Phone:</strong><br>9004023042 / 8591387772</p>
-                    <p><strong>⏰ Hours:</strong><br>10 AM - 1 PM | 5 PM - 8 PM</p>
+            <h2 class="section-title">Expert Medical Services</h2>
+            <p class="section-subtitle">Specialized care from India's top government-trained experts.</p>
+            
+            <div class="service-block">
+                <div class="service-flex">
+                    <div class="service-text">
+                        <h3>Orthodontics & Dental</h3>
+                        <p>Specialized in Braces, Invisible Aligners, and Oral Surgery. We provide pain-free Wisdom Tooth extractions and complete smile makeovers using advanced rotary endodontic technology.</p>
+                        <a href="Orthodontics.html" class="btn-outline">View Dental Services →</a>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1606811971618-4486d14f3f99?q=80&w=600" alt="Dental Care">
+                    </div>
                 </div>
-                <div class="map-container card">
-                    <iframe src="http://googleusercontent.com/maps.google.com/4" width="100%" height="300" style="border:0; border-radius: 15px;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+
+            <div class="service-block">
+                <div class="service-flex">
+                    <div class="service-text">
+                        <h3>Paediatrics (Child Care)</h3>
+                        <p>Complete growth monitoring, neonatal care, and child heart specialist services for ages 0-16. Led by senior consultants with over 4 decades of clinical expertise.</p>
+                        <a href="Paediatrics.html" class="btn-outline">Child Care Details →</a>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1631217868264-e5b90bb7e133?q=80&w=600" alt="Child Care">
+                    </div>
+                </div>
+            </div>
+
+            <div class="service-block">
+                <div class="service-flex">
+                    <div class="service-text">
+                        <h3>Women Specialist (OBGYN)</h3>
+                        <p>Comprehensive care for women's health led by Dr. Bharati Rathod. Specializing in complete Pre & Post Pregnancy care, Menstrual Disorder management, and PCOS treatments.</p>
+                        <a href="WomenSpecialist.html" class="btn-outline">Gynaecology Services →</a>
+                    </div>
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=600" alt="Women Specialist Care">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+  <section class="section" id="contact" style="background: #fff;">
+        <div class="container">
+            <h2 class="section-title">Visit Our Clinic</h2>
+            <p class="section-subtitle">Easy access in the heart of Kalachowki, Mumbai</p>
+            
+            <div class="location-grid">
+                <div class="card" style="padding: 40px; display: flex; flex-direction: column; justify-content: center;">
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="color: var(--primary); font-size: 20px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            📍 Clinic Address
+                        </h3>
+                        <p style="color: #444; font-size: 15px; line-height: 1.6;">
+                            D 1-2, Ishwati CHS, D.L. road, <br>
+                            Next to Ganesh Banquet Hall, <br>
+                            Kalachowki, Mumbai 400033
+                        </p>
+                    </div>
+
+                    <div style="margin-bottom: 25px;">
+                        <h3 style="color: var(--primary); font-size: 20px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            📞 Call for Appointment
+                        </h3>
+                        <p style="font-size: 16px; font-weight: 600;">
+                            <a href="tel:9004023042" style="text-decoration: none; color: var(--text-dark);">9004023042</a> / 
+                            <a href="tel:8591387772" style="text-decoration: none; color: var(--text-dark);">8591387772</a>
+                        </p>
+                    </div>
+
+                    <div>
+                        <h3 style="color: var(--primary); font-size: 20px; margin-bottom: 10px; display: flex; align-items: center; gap: 10px;">
+                            ⏰ Consulting Hours
+                        </h3>
+                        <div style="display: flex; justify-content: space-between; font-size: 14px; border-bottom: 1px solid #eee; padding: 5px 0;">
+                            <span>Morning:</span> <strong>10:00 AM - 01:00 PM</strong>
+                        </div>
+                        <div style="display: flex; justify-content: space-between; font-size: 14px; padding: 5px 0;">
+                            <span>Evening:</span> <strong>05:00 PM - 08:00 PM</strong>
+                        </div>
+                        <p style="font-size: 12px; color: #25d366; font-weight: bold; margin-top: 5px;">● Open All Days</p>
+                    </div>
+                </div>
+
+                <div class="card" style="padding: 0; overflow: hidden; border: none; box-shadow: var(--shadow);">
+                    <iframe 
+                        src="http://googleusercontent.com/maps.google.com/8" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0; min-height: 400px; display: block;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="main-footer">
+    <footer class="main-footer" style="background: #000; padding: 80px 0 30px;">
         <div class="container footer-grid">
             <div class="footer-brand">
-                <h3>ACE Healthcare</h3>
-                <p>Providing trusted medical and dental care for generations in Parel East.</p>
+                <h3 style="font-size: 24px; letter-spacing: -0.5px;">ACE <span style="color: var(--primary);">HEALTHCARE</span></h3>
+                <p style="max-width: 300px; margin-top: 15px; font-size: 14px; line-height: 1.8; color: #888;">
+                    Trusted multi-speciality medical and dental care in Parel East for over 40 years. Providing top-tier diagnosis and affordable treatment.
+                </p>
             </div>
+            
             <div class="footer-links">
-                <h4>Explore</h4>
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="treatments.html">Treatments</a></li>
-                    <li><a href="doctors.html">Doctors</a></li>
+                <h4 style="color: white; margin-bottom: 20px; font-size: 16px;">Expertise</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="Orthodontics.html" style="color: #888; text-decoration: none; font-size: 14px;">Orthodontics</a></li>
+                    <li style="margin-bottom: 10px;"><a href="Paediatrics.html" style="color: #888; text-decoration: none; font-size: 14px;">Paediatrics</a></li>
+                    <li style="margin-bottom: 10px;"><a href="WomenSpecialist.html" style="color: #888; text-decoration: none; font-size: 14px;">Gynaecology</a></li>
                 </ul>
             </div>
-            <div class="footer-services">
-                <h4>Specialities</h4>
-                <ul>
-                    <li>Dental Care</li>
-                    <li>Child Specialist</li>
-                    <li>Women Health</li>
+
+            <div class="footer-links">
+                <h4 style="color: white; margin-bottom: 20px; font-size: 16px;">Quick Links</h4>
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 10px;"><a href="index.html" style="color: #888; text-decoration: none; font-size: 14px;">Home</a></li>
+                    <li style="margin-bottom: 10px;"><a href="doctors.html" style="color: #888; text-decoration: none; font-size: 14px;">Our Doctors</a></li>
+                    <li style="margin-bottom: 10px;"><a href="contact.html" style="color: #888; text-decoration: none; font-size: 14px;">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>© 2026 ACE Healthcare Center. All Rights Reserved.</p>
+
+        <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid #222; color: #444; font-size: 12px;">
+            <p>© 2026 ACE Healthcare Center. Designed for Patient Excellence.</p>
         </div>
     </footer>
 
     <div class="bottom-bar">
-        <a href="tel:9004023042" class="bar-btn call">📞 Call 9004023042</a>
-        <a href="https://wa.me/919004023042" class="bar-btn whatsapp">💬 WhatsApp</a>
+        <a href="tel:9004023042" class="bar-btn call" style="background: var(--primary); transition: 0.3s;">
+            <span>📞 Call Appointment</span>
+        </a>
+        <a href="https://wa.me/919004023042" class="bar-btn whatsapp" style="background: #25d366; transition: 0.3s;">
+            <span>💬 WhatsApp</span>
+        </a>
     </div>
 
 </body>
